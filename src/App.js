@@ -1,25 +1,14 @@
-import logo from './logo.svg';
-import './App.css';
-
+import Toolbox from "./components/Toolbox";
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    return (
+        <>
+            <div className="mt-5 text-center"><h1>PARAGRAPH AI - PARAPHRASING TOOL</h1></div>
+            
+            <div className="col-6 mx-auto mt-5">
+                <Toolbox />
+            </div>
+        </>
+    );
 }
 
 export default App;
