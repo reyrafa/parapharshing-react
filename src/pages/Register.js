@@ -12,6 +12,7 @@ function Register() {
     const [password, setPassword] = useState("");
     const [rePassword, setRePassword] = useState("");
     const [isDisabled, setIsDisabled] = useState(true);
+    const [buttonText, setButtonText] = useState("REGISTER");
 
     useEffect(() => {
         if (
@@ -32,6 +33,8 @@ function Register() {
 
     const registerUser = async (event) => {
         event.preventDefault();
+        setIsDisabled(true);
+        setButtonText("Please wait...");
         try {
             const response = await fetch(
                 `${process.env.REACT_APP_API_BASE_URL}/user/register`,
@@ -68,6 +71,7 @@ function Register() {
                     text: result.message,
                 });
             }
+          
         } catch (error) {
             console.error("Error during registration:", error);
             Swal.fire({
@@ -76,6 +80,7 @@ function Register() {
                 text: "An unexpected error occurred. Please try again later.",
             });
         }
+        setButtonText("REGISTER");
     };
     return (
         <>
@@ -195,7 +200,7 @@ function Register() {
                                             type="submit"
                                             disabled={isDisabled}
                                         >
-                                            REGISTER
+                                            {buttonText}
                                         </Button>
                                         <div className=" text-muted">
                                             Already Registered?

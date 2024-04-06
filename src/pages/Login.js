@@ -11,6 +11,7 @@ function Login() {
     const [design, setDesign] = useState([]);
     const [passwordError, setPasswordError] = useState("none");
     const [emailError, setEmailError] = useState("none");
+    const [buttonText, setButtonText] = useState("LOGIN");
 
     const { user, setUser } = useContext(UserContext);
 
@@ -32,7 +33,8 @@ function Login() {
 
     const Login = async (event) => {
         event.preventDefault();
-
+      
+        setButtonText("Please wait...");
         try {
             const response = await fetch(
                 `${process.env.REACT_APP_API_BASE_URL}/user/login`,
@@ -73,7 +75,7 @@ function Login() {
                 text: "An unexpected error occurred. Please try again later.",
             });
         }
-
+        setButtonText("LOG IN");
         setPassword("");
     };
 
@@ -195,7 +197,7 @@ function Login() {
                                             opacity: design.opacity,
                                         }}
                                     >
-                                        LOG IN
+                                        {buttonText}
                                     </Button>
                                 </div>
                                 <div className="d-flex justify-content-center mt-4 text-secondary">
@@ -220,7 +222,7 @@ function Login() {
                                     }}
                                 >
                                     Terms of Service
-                                </Link>{" "}
+                                </Link>
                                 and have read our
                                 <Link
                                     style={{
