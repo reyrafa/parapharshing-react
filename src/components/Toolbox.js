@@ -254,7 +254,7 @@ function Toolbox() {
                                                 backgroundColor:
                                                     highlightedSentence ===
                                                     index
-                                                        ? "yellow"
+                                                        ? "#DCDCC6"
                                                         : "transparent",
                                             }}
                                             onClick={(event) =>
