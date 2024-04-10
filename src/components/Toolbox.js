@@ -160,11 +160,11 @@ function Toolbox() {
     };
 
     const copyToClipboard = (event) => {
-        event.preventDefault()
+        event.preventDefault();
         navigator.clipboard
             .writeText(result)
             .then(() => {
-                alert("Text copied to clipboard");
+                // alert("Text copied to clipboard");
             })
             .catch((error) => {
                 console.error("Failed to copy text: ", error);
@@ -254,7 +254,7 @@ function Toolbox() {
                                                 backgroundColor:
                                                     highlightedSentence ===
                                                     index
-                                                        ? "#DCDCC6"
+                                                        ? "white"
                                                         : "transparent",
                                             }}
                                             onClick={(event) =>
@@ -277,6 +277,10 @@ function Toolbox() {
                                             className="rounded"
                                         >
                                             <Button
+                                                style={{
+                                                    backgroundColor: "#8C633B",
+                                                    border: "none",
+                                                }}
                                                 onClick={(event) => {
                                                     redoResult(
                                                         highlightedSentence,
@@ -288,6 +292,11 @@ function Toolbox() {
                                             </Button>
                                             {redoTimes !== 0 ? (
                                                 <Button
+                                                    style={{
+                                                        backgroundColor:
+                                                            "#8C633B",
+                                                        border: "none",
+                                                    }}
                                                     className="ms-3"
                                                     onClick={(event) => {
                                                         undoResult(
@@ -310,14 +319,14 @@ function Toolbox() {
                                 <Button
                                     className="mb-5"
                                     style={{
-                                        backgroundColor: "#EACDA6",
+                                        backgroundColor: "#8C633B",
                                         border: "none",
                                         boxShadow: "none",
                                     }}
                                     type="submit"
                                     disabled={disable}
                                 >
-                                    {loading ? "loading..." : "PARAPHRASE"}
+                                    {loading ? "loading..." : "Paraphrase"}
                                 </Button>
                             </div>
                         </Form>
@@ -333,10 +342,7 @@ function Toolbox() {
                                 }}
                                 className="fs-1"
                             >
-                                <FontAwesomeIcon
-                                    icon="fa-solid fa-clipboard"
-                                    size="lg"
-                                />
+                               <FontAwesomeIcon icon="fa-solid fa-copy" size="lg"/>
                             </Button>
                         </Col>
                     </Row>
