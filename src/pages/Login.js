@@ -58,6 +58,7 @@ function Login() {
                     Swal.fire({
                         title: "Logged Successfull",
                         icon: "success",
+                        confirmButtonColor: "#B9875C"
                     });
                     setEmail("");
                 }
@@ -66,6 +67,7 @@ function Login() {
                     title: "Login Failed",
                     icon: "error",
                     text: result.message,
+                    confirmButtonColor: "#B9875C"
                 });
             }
         } catch (error) {
@@ -195,6 +197,8 @@ function Login() {
                                         style={{
                                             cursor: design.cursor,
                                             opacity: design.opacity,
+                                            backgroundColor: '#B9875C',
+                                            border: "none",
                                         }}
                                     >
                                         {buttonText}
@@ -203,8 +207,9 @@ function Login() {
                                 <div className="d-flex justify-content-center mt-4 text-secondary">
                                     <p>No Account Yet?</p>
                                     <Link
-                                        className="text-decoration-none text-success ms-1"
+                                        className="text-decoration-none ms-1"
                                         to={"/register"}
+                                        style={{color: "#B9875C"}}
                                     >
                                         SIGN UP
                                     </Link>

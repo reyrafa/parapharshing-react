@@ -58,6 +58,7 @@ function Register() {
                     title: "Registration Success!",
                     icon: "success",
                     text: result.insert,
+                    confirmButtonColor: "#B9875C"
                 });
                 setName("");
                 setEmail("");
@@ -199,6 +200,7 @@ function Register() {
                                             variant="primary"
                                             type="submit"
                                             disabled={isDisabled}
+                                            style={{backgroundColor: "#B9875C", border: "none"}}
                                         >
                                             {buttonText}
                                         </Button>
@@ -207,6 +209,7 @@ function Register() {
                                             <Link
                                                 className="text-decoration-none"
                                                 to={"/login"}
+                                                style={{color: "#B9875C"}}
                                             >
                                                 Login
                                             </Link>

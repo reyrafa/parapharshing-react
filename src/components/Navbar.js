@@ -19,7 +19,7 @@ function NavBar() {
     const isRegisterPage = location.pathname === "/register";
     const isProductPage = location.pathname === "/products";
 
-    const backgroundColor = "#939384";
+    const backgroundColor = "#B9875C";
     const textColor = "#F6F6DF";
     return (
         <>
@@ -43,7 +43,7 @@ function NavBar() {
                         <h2 style={{ color: textColor }}>FilComprehend</h2>
                     </Navbar.Brand>
 
-                    <Navbar.Toggle aria-controls="basic-navbar-nav" />
+                    <Navbar.Toggle aria-controls="basic-navbar-nav" style={{backgroundColor: "#DCC3AD"}} />
                     <Navbar.Collapse id="basic-navbar-nav">
                         {!isLoginPage && !isRegisterPage && (
                             <>

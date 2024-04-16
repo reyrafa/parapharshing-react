@@ -8,6 +8,7 @@ import NotFoundPage from "./components/NotFoundPage";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 import Logout from "./pages/Logout";
+import backgroundImg from "./assets/images/background.jpg";
 function App() {
     const [user, setUser] = useState({
         id: null,
@@ -61,7 +62,7 @@ function App() {
             setLoading(false);
         }, 3000);
     }, []);
-    document.body.style.backgroundColor = "#FBFBF1";
+    document.body.style.backgroundImage = `url(${backgroundImg})`;
 
     return (
         <>
